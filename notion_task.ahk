@@ -30,6 +30,21 @@
 		}
     return
 
+;focus task
+    ::;find::
+        send {Esc}
+        Send ^c
+        ClipWait, 1
+        If WinExist("ahk_class rctrl_renwnd32 ahk_exe OUTLOOK.EXE")
+            WinActivate, ahk_class rctrl_renwnd32 ahk_exe OUTLOOK.EXE
+        Send ^e
+        Send ^a
+        Send ^v
+        Send {Enter}
+        return
+        
+
+
 ;reminder task home
     ::;remindh:: 
         Clipboard := "" ;Empty the clipboard
@@ -134,7 +149,7 @@
         body = {"parent":{"database_id":"%work_task_database_id%"},"properties":{"Responsible":{"relation":[{"id":"%responsible_relation_id%"}]},"Name":{"title":[{"text":{"content":"%notion_task_title%"}}]}}}
         whr.Send(body)
         MsgBox, % notion_task_title
-        ; Msgbox, % whr.ResponseText
+        ;Msgbox, % whr.ResponseText
     ; ElapsedTime := A_TickCount - StartTime
     ; MsgBox,  %ElapsedTime% milliseconds have elapsed.
         return
