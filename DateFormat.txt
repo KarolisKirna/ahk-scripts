@@ -1,0 +1,17 @@
+[Date tool]
+Format=yyyy-MM-dd
+;Format=M-d-yyyy
+;The part after "Format=" is the format.
+;Is uses the Date Formats (CaSe SensiTiVe)from AutoHotkey manual.
+;d 	= Day of the month without leading zero (1 - 31) 
+;dd 	= Day of the month with leading zero (01 – 31) 
+;ddd 	= Abbreviated name for the day of the week (e.g. Mon) in the current user's language 
+;dddd 	= Full name for the day of the week (e.g. Monday) in the current user's language 
+;M 	= Month without leading zero (1 – 12) (WARNING: lower 'm' = 'Minutes')
+;MM 	= Month with leading zero (01 – 12) 
+;MMM 	= Abbreviated month name (e.g. Jan) in the current user's language 
+;MMMM 	= Full month name (e.g. January) in the current user's language 
+;y 	= Year without century, without leading zero (0 – 99) 
+;yy 	= Year without century, with leading zero (00 - 99) 
+;yyyy 	= Year with century. For example: 2005 
+;gg 	= Period/era string for the current user's locale (blank if none) 
