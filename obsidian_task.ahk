@@ -16,7 +16,8 @@
 ;variable are set a separate file
 #Include my_variables.ahk
 
-    ::;obst:: 
+    ::;obst::
+	FormatTime, CurrentDateTime,, yyyy-MM-dd ;setting the date format to use in the variables
         Clipboard := "" ;Empty the clipboard
         Send ^a
         Send ^c
@@ -24,7 +25,9 @@
         Send {Esc}
         task_name := Clipboard
         obsidian_task_title := task_name
-        Sleep 100
+	;obsidian_daily_note_file_name_full := obsidian_daily_note_file_name_constant_part "\" CurrentDateTime ".md"
+	obsidian_daily_note_file_name_full := obsidian_daily_note_file_name_constant_part "\" "Master Task List.md"
+        Sleep 500
         ;SetTitleMatchMode, 2
         if WinActive("ahk_class rctrl_renwnd32 ahk_exe OUTLOOK.EXE") ;if e-mail in outlook task is selected
         {	
@@ -49,8 +52,8 @@
         
             obsidian_task_title := task_name ">>>" olMailItem.SenderName " --> " olMailItem.To " - " olMailItem.ReceivedTime " - " olMailItem.Subject 
         }
-        file := FileOpen(obsidian_daily_note_file_name,"a")    
+        file := FileOpen(obsidian_daily_note_file_name_full,"a")    
         file.write("`n- [ ] #inbox " obsidian_task_title)
         file.close()
-        ;MsgBox %obsidian_daily_note_file_name% 
+	;MsgBox %obsidian_daily_note_file_name_full% 
         return
