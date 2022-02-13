@@ -13,6 +13,7 @@
     SetWinDelay, -1
     SetControlDelay, -1
     SendMode Input
+    SetCapsLockState, AlwaysOff
 
 ;caps-keys
     ; Terminate window, shut down, restart script, delete key
@@ -22,19 +23,19 @@
     CapsLock & j:: Down
     CapsLock & k:: Up
     CapsLock & l:: Right
-    CapsLock & a:: Send {end}
+    CapsLock & 4:: Send {end}
     CapsLock & x:: Send {delete}
-    CapsLock & i:: Send {home}
-    CapsLock & u:: Send {PGUP}
-    CapsLock & d:: Send {PGDN}
+    CapsLock & 0:: Send {home}
+    ;CapsLock & u:: Send {PGUP}
+    ;CapsLock & d:: Send {PGDN}
 
-    Capslock & w::
-    Send {Ctrl Down}{Right}{Ctrl Up}
-    If GetKeyState("Shift")
-    Send {Ctrl Down}{Shift Down}{Right}{Ctrl Up}{Shift Up}
-    Return
+    ;Capslock & w::
+    ;Send {Ctrl Down}{Right}{Ctrl Up}
+    ;If GetKeyState("Shift")
+    ;Send {Ctrl Down}{Shift Down}{Right}{Ctrl Up}{Shift Up}
+    ;Return
 
-    Capslock & b:: Send {Ctrl Down}{Left}{Ctrl Up}
+    ;Capslock & b:: Send {Ctrl Down}{Left}{Ctrl Up}
 
 
 DllCall("Sleep",UInt,17) ;?????????I just used the precise sleep function to wait exactly 17 milliseconds
